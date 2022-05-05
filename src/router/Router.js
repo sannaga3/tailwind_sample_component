@@ -6,11 +6,12 @@ import { Company } from "../components/pages/Company";
 import { Work } from "../components/pages/Work";
 import { Contact } from "../components/pages/Contact";
 import { FullTopPage } from "../components/fullPages/FullTopPage";
+import { FullNewsPage } from "../components/fullPages/FullNewsPage";
 import { NotFound } from "../components/pages/NotFound";
 
 export const Router = () => {
   const path = window.location.href;
-  const isDefaultLayout = path.includes("fullTop");
+  const isDefaultLayout = path.includes("full");
 
   return (
     <>
@@ -29,6 +30,7 @@ export const Router = () => {
         ) : (
           <Routes>
             <Route path="/fullTop" element={<FullTopPage />} />
+            <Route path="/fullNews" element={<FullNewsPage />} />
           </Routes>
         )}
       </BrowserRouter>

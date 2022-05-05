@@ -10,7 +10,7 @@ export const ContentCardRow = (props) => {
           <div className="col-2 px-10 py-5">
             <div className="rounded-lg h-64 overflow-hidden">
               <img
-                alt="concept_image"
+                alt="top_image"
                 className="h-full w-full bg-gray-200"
                 src={imagePath}
               />

@@ -105,41 +105,64 @@ export const Header = () => {
   );
 };
 
-export const Top = () => {
+export const News = () => {
+  const [width, setWidth] = useState("");
+
+  const topics = [
+    {
+      id: 1,
+      date: "2020/02/22",
+      title: "Winter vacation",
+      content: "announce about winter vacation",
+    },
+    {
+      id: 2,
+      date: "2020/04/23",
+      title: "Golden week",
+      content: "announce about golden week",
+    },
+    {
+      id: 3,
+      date: "2020/07/22",
+      title: "Summer vacation",
+      content: "announce about summer vacation",
+    },
+  ];
+
+  window.addEventListener(
+    "resize",
+    function () {
+      setWidth(window.innerWidth);
+    },
+    true
+  );
+
   return (
-    <div>
-      <div className="flex justify-center">
-        <h1 className="text-3xl font-bold">Top</h1>
-      </div>
-      <section className="text-gray-600 body-font border-2 border-gray-500 mt-5 w-100">
-        <div className="grid grid-cols-2">
-          <div className="col-2 px-10 py-5">
-            <div className="rounded-lg h-64 overflow-hidden">
-              <img
-                alt="top_image"
-                className="h-full w-full bg-gray-200"
-                src="#"
-              />
+    <div className="text-center">
+      <h1 className="text-3xl font-bold border-b-2 pb-8 border-gray-500 md:border-b-0 md:pb-0">
+        News
+      </h1>
+      <section className="text-gray-600 mt-3 md:mt-8">
+        {width > 768 && (
+          <div className="container pl-5 pt-5 pb-2 font-semibold text-lg text-left border-b-2 border-gray-500 grid md:grid-cols-12 gap-1 grid-cols-1">
+            <div className="md:col-span-2 col-none">day</div>
+            <div className="md:col-span-2 col-none">title</div>
+            <div className="md:col-span-6 col-none">content</div>
+          </div>
+        )}
+
+        {topics.map((topic) => (
+          <div
+            className="container py-4 grid gap-1 grid-cols-4 font-semibold border-b-2 border-gray-500 text-center md:grid-cols-12 md:text-left md:py-4"
+            key={topic.title}
+          >
+            <div className="md:col-span-2 col-span-1">{topic.date}</div>
+            <div className="md:col-span-2 col-span-2">{topic.title}</div>
+            <div className="md:col-span-6 col-span-4 text-left font-normal pl-5">
+              {topic.content}
             </div>
           </div>
-          <div className="text-center">
-            <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
-              Concept Title
-            </h2>
-            <div className="p-3 break-all text-left">
-              Explain concept. Concept is .... and so
-              on~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            </div>
-            <div className="mt-4 mb-10">
-              <Link
-                to="/company"
-                className="w-5 text-white bg-indigo-400 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-500 rounded"
-              >
-                company
-              </Link>
-            </div>
-          </div>
-        </div>
+        ))}
       </section>
     </div>
   );
