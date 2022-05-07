@@ -1,7 +1,12 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: (theme) => ({
+        "top-img": "url('/public/images/top.jpg')",
+        "bee-img": "url('/public/images/bee.jpg')",
+      }),
+    },
   },
   plugins: [],
   variants: {
