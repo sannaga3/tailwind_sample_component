@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { TopicItem } from "../atoms/topic/TopicItem";
+import { NewsItem } from "../atoms/news/NewsItem";
 
 export const News = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -13,7 +13,7 @@ export const News = () => {
     true
   );
 
-  const topics = [
+  const newsList = [
     {
       id: 1,
       date: "2020/02/22",
@@ -35,8 +35,10 @@ export const News = () => {
   ];
 
   return (
-    <div className="text-center">
-      <h1 className="text-3xl font-bold">News</h1>
+    <>
+      <div className="text-center">
+        <h1 className="text-3xl font-bold">News</h1>
+      </div>
       <section className="text-gray-600 md:mt-5 bg-white opacity-80 hover:opacity-100 py-5 pl-6 pr-10 border-2 border-gray-500">
         {width > 768 && (
           <div className="ml-2 pt-2 pb-2 pl-8 font-semibold text-lg text-left border-b-2 border-gray-500 grid md:grid-cols-12 grid-cols-1">
@@ -46,10 +48,10 @@ export const News = () => {
           </div>
         )}
 
-        {topics.map((topic) => (
-          <TopicItem topic={topic} key={topic.id} />
+        {newsList.map((news) => (
+          <NewsItem news={news} key={news.id} />
         ))}
       </section>
-    </div>
+    </>
   );
 };

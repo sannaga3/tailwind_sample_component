@@ -1,5 +1,5 @@
-export const TopicItem = (prop) => {
-  const { date, title, content } = prop.topic;
+export const NewsItem = (prop) => {
+  const { date, title, content } = prop.news;
 
   return (
     <div className="py-2 pl-2">
