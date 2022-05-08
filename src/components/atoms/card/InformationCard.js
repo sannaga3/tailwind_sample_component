@@ -28,7 +28,10 @@ export const InformationCard = (props) => {
         <div className="border-b-2 border-gray-500 pb-5">
           <div className="row-span-1 p-1">
             {histories.map((history) => (
-              <div className="grid grid-cols-6 place-items-auto border-dotted border-b-2 border-gray-500 p-1">
+              <div
+                className="grid grid-cols-6 place-items-auto border-dotted border-b-2 border-gray-500 p-1"
+                key={history.content}
+              >
                 <div className="col-span-1">{history.date}</div>
                 <div className="col-span-3">{history.content}</div>
               </div>

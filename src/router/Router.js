@@ -16,7 +16,10 @@ export const Router = () => {
   return (
     <>
       <BrowserRouter>
-        <div className="bg-top-img bg-cover opacity-90">
+        <div
+          id="background-image"
+          className="bg-top-img bg-cover opacity-90 w-full h-full"
+        >
           {isDefaultLayout === false ? (
             <DefaultLayout>
               <Routes>

@@ -1,9 +1,9 @@
 export const IndigoButton = (props) => {
-  //   const { value, path } = props;
+  const { value, path } = props;
 
   return (
-    <button className="flex mx-auto my-6 text-white bg-indigo-400 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-500 rounded">
-      {/* {value} */}
+    <button className="text-white bg-indigo-500 border-0 pt-2 px-4 mr-8 focus:outline-none hover:bg-indigo-600">
+      {value}
     </button>
   );
 };
