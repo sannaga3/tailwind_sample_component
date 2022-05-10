@@ -1,12 +1,10 @@
-export const NewsItem = (prop) => {
-  const { date, title, content } = prop.news;
-
+export const NewsItem = ({ date, title, content }) => {
   return (
     <div className="py-2 pl-2">
-      <div className="container grid gap-1 grid-cols-4 font-semibold border-b-2 border-gray-500 text-center  md:grid-cols-12 md:text-left md:py-4">
-        <div className="md:col-span-2 col-span-1 md:pl-4">{date}</div>
-        <div className="md:col-span-2 col-span-2">{title}</div>
-        <div className="md:col-span-6 col-span-4 text-left font-normal pl-5">
+      <div className="grid gap-1 grid-cols-1 font-semibold border-b-2 border-gray-500 text-center md:grid-cols-8 md:py-4">
+        <div className="col-span-1 md:col-span-2">{date}</div>
+        <div className="col-span-1 md:col-span-2">{title}</div>
+        <div className="col-span-1 md:col-span-4 font-normal pl-5 pb-2 md:pb-0">
           {content}
         </div>
       </div>

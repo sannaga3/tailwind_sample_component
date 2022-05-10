@@ -1,6 +1,4 @@
-export const ListItem = (prop) => {
-  const { value } = prop;
-
+export const ListItem = ({ value }) => {
   return (
     <div className="pl-2">
       <div className="flex flex-row items-center text-left text-gray-600 mb-2">

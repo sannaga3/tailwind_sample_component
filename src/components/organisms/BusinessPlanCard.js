@@ -1,9 +1,7 @@
 import { IndigoLink } from "../atoms/link/IndigoLink";
 import { ListItem } from "../atoms/List/ListItem";
 
-export const BusinessPlanCard = (props) => {
-  const { name, price, explanations } = props.plan;
-
+export const BusinessPlanCard = ({ name, price, explanations }) => {
   return (
     <>
       <div className="p-4">

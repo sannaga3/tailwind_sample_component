@@ -57,12 +57,17 @@ export const Work = () => {
               <h1 className="text-3xl font-medium title-font mb-2 text-gray-900">
                 Business Plans
               </h1>
-              <p className="lg:w-2/3 mx-auto text-gray-700">
+              <div className="lg:w-2/3 mx-auto text-gray-700">
                 We can introduce next 4 plans. Customization is also possible.
-              </p>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
                 {businessPlans.map((businessPlan) => (
-                  <BusinessPlanCard plan={businessPlan} key={businessPlan.id} />
+                  <BusinessPlanCard
+                    key={businessPlan.id}
+                    name={businessPlan.name}
+                    price={businessPlan.price}
+                    explanations={businessPlan.explanations}
+                  />
                 ))}
               </div>
             </div>

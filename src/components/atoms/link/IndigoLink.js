@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const IndigoLink = (props) => {
-  const { value, path } = props;
-
+export const IndigoLink = ({ value, path }) => {
   return (
     <Link
       to={path}

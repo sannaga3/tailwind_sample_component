@@ -39,17 +39,22 @@ export const News = () => {
       <div className="text-center">
         <h1 className="text-3xl font-bold">News</h1>
       </div>
-      <section className="text-gray-600 md:mt-5 bg-white opacity-80 hover:opacity-100 py-5 pl-6 pr-10 border-2 border-gray-500">
+      <section className="text-gray-600 bg-white opacity-80 hover:opacity-100 py-3 pl-6 pr-10 mt-5 border-2 border-gray-500 md:py-5">
         {width > 768 && (
-          <div className="ml-2 pt-2 pb-2 pl-8 font-semibold text-lg text-left border-b-2 border-gray-500 grid md:grid-cols-12 grid-cols-1">
-            <div className="md:col-span-2 col-none">day</div>
-            <div className="md:col-span-2 col-none">title</div>
-            <div className="md:col-span-6 col-none">content</div>
+          <div className="ml-2 pt-2 pb-2 pl-8 font-semibold text-lg text-center border-b-2 border-gray-500 grid md:grid-cols-8 grid-cols-1">
+            <div className="col-none md:col-span-2">date</div>
+            <div className="col-none md:col-span-2">title</div>
+            <div className="col-none md:col-span-4">content</div>
           </div>
         )}
 
         {newsList.map((news) => (
-          <NewsItem news={news} key={news.id} />
+          <NewsItem
+            date={news.date}
+            title={news.title}
+            content={news.content}
+            key={news.id}
+          />
         ))}
       </section>
     </>

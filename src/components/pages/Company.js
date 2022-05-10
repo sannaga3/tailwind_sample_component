@@ -31,7 +31,7 @@ export const Company = () => {
         <h1 className="text-3xl font-bold">Company Information</h1>
       </div>
       <section className="text-gray-600 body-font border-2 border-gray-500 mt-5 bg-white opacity-80 hover:opacity-100">
-        <div className="py-5 mx-20 px-12">
+        <div className="py-5 mx-8 px-3  lg:mx-20 lg:px-12">
           <InformationCard information={information} />
         </div>
       </section>
